@@ -12,6 +12,8 @@ end
 
 return require("packer").startup(function(use)
     use({ "wbthomason/packer.nvim" })
+    -- Theme Gruvbox
+    use({ "ellisonleao/gruvbox.nvim" })
     -- Theme NightFox
     use({ "EdenEast/nightfox.nvim" })
     -- Nvim-Tree
@@ -27,6 +29,16 @@ return require("packer").startup(function(use)
     use({ "akinsho/bufferline.nvim", tag = "v2.*" })
     -- Scrolling
     use({ "karb94/neoscroll.nvim" })
+    -- Comment
+    use({ "numToStr/Comment.nvim" })
+    -- Toggleterm
+    use({
+        "akinsho/toggleterm.nvim",
+        tag = "v2.*",
+        config = function()
+            require("toggleterm").setup()
+        end,
+    })
     -- Tree Sitter
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
     use({ "nvim-treesitter/nvim-treesitter-textobjects" })

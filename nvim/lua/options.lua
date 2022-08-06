@@ -24,6 +24,7 @@ local options = {
     clipboard = "unnamedplus",
     shadafile = "NONE",
     shada = "",
+    background = "dark",
 }
 
 local disable = {

@@ -28,7 +28,7 @@ local attach = function(_, bufnr)
     bufKeymap(bufnr, "n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 end
 
-local servers = { "sumneko_lua", "ccls" }
+local servers = { "sumneko_lua", "ccls", "yamlls" }
 
 for _, lsp in pairs(servers) do
     require("lspconfig")[lsp].setup({
@@ -75,6 +75,19 @@ lspconfig.ccls.setup({
         },
         clangd = {
             excludeArgs = { "-frounding-math" },
+        },
+    },
+})
+
+lspconfig.yamlls.setup({
+    attach = attach,
+    capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+    settings = {
+        yaml = {
+            schemas = {
+                ["https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/static/jsonschema/kedro-catalog-0.17.json"] = "conf/**/*catalog*",
+                ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+            },
         },
     },
 })

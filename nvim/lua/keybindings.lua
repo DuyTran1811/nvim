@@ -65,6 +65,9 @@ keymap("n", "fg", ":Telescope live_grep<CR>", opts)
 keymap("n", "fb", ":Telescope buffers<CR>", opts)
 keymap("n", "fh", ":Telescope help_tags<CR>", opts)
 
+-- Toggleterm
+keymap("n", "tt", ":Toggleterm <CR>", opts)
+
 -- -- Key map Nvim Debuger
 -- keymap("n", "<F3>", ':lua require"dap".toggle_breakpoint()<CR>', opts)
 -- keymap("n", "<F5>", ':lua require"dap".step_into()<CR>', opts)

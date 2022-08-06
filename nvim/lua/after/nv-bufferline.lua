@@ -7,7 +7,7 @@ require("bufferline").setup({
         close_command = "bdelete! %d",
         right_mouse_command = "bdelete! %d",
         left_mouse_command = "buffer %d",
-        middle_mouse_command = nil,
+        middle_mouse_command = "",
         indicator_icon = "▎",
         buffer_close_icon = "",
         modified_icon = "●",
@@ -22,7 +22,7 @@ require("bufferline").setup({
         max_name_length = 18,
         max_prefix_length = 15,
         tab_size = 18,
-        diagnostics = "nvim_lsp",
+        diagnostics = true,
         diagnostics_update_in_insert = false,
         diagnostics_indicator = function(count, level, diagnostics_dict, context)
             return "(" .. count .. ")"
