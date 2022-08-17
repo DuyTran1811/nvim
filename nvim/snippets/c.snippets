@@ -1,15 +1,13 @@
 ## Main
 # main
 snippet main
-	int main(int argc, char *argv[])
-	{
+	int main(int argc, char *argv[]) {
 		${0}
 		return 0;
 	}
 # main(void)
 snippet mainn
-	int main(void)
-	{
+	int main(void) {
 		${0}
 		return 0;
 	}
@@ -280,10 +278,8 @@ snippet prx
 # getopt
 snippet getopt
 	int choice;
-	while (1)
-	{
-		static struct option long_options[] =
-		{
+	while (1) {
+		static struct option long_options[] = {
 			/* Use flags like so:
 			{"verbose",	no_argument,	&verbose_flag, 'V'}*/
 			/* Argument styles: no_argument, required_argument, optional_argument */
@@ -306,8 +302,7 @@ snippet getopt
 		if (choice == -1)
 			break;
 
-		switch( choice )
-		{
+		switch( choice ) {
 			case 'v':
 				${2}
 				break;
@@ -327,10 +322,8 @@ snippet getopt
 	}
 
 	/* Deal with non-option arguments here */
-	if ( optind < argc )
-	{
-		while ( optind < argc )
-		{
+	if ( optind < argc ) {
+		while ( optind < argc ) {
 			${0}
 		}
 	}

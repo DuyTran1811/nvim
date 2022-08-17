@@ -64,21 +64,8 @@ lspconfig.sumneko_lua.setup({
         },
     },
 })
-
-lspconfig.ccls.setup({
-    attach = attach,
-    capabilities = capabilities,
-    int_options = {
-        compilationDatabaseDirectory = "build",
-        index = {
-            threads = 0,
-        },
-        clangd = {
-            excludeArgs = { "-frounding-math" },
-        },
-    },
-})
-
+lspconfig.ccls.setup({})
+-- lspconfig.clangd.setup({})
 lspconfig.yamlls.setup({
     attach = attach,
     capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
@@ -91,3 +78,34 @@ lspconfig.yamlls.setup({
         },
     },
 })
+
+
+-- completion symbols
+vim.lsp.protocol.CompletionItemKind = {
+    ' [Text]', -- Text
+    ' [Method]', -- Method
+    ' [Function]', -- Function
+    ' [Constructor]', -- Constructor
+    ' [Field]', -- Field
+    ' [Variable]', -- Variable
+    ' [Class]', -- Class
+    'ﰮ [Interface]', -- Interface
+    ' [Module]', -- Module
+    ' [Property]', -- Property
+    ' [Unit]', -- Unit
+    ' [Value]', -- Value
+    ' [Enum]', -- Enum
+    ' [Keyword]', -- Keyword
+    '﬌ [Snippet]', -- Snippet
+    ' [Color]', -- Color
+    ' [Field]', -- File
+    ' [Reference]', -- Reference
+    ' [Folder]', -- Folder
+    ' [EnumMember]', -- EnumMember
+    ' [Constant]', -- Constant
+    ' [Struct]', -- Struct
+    ' [Event]', -- Event
+    'ﬦ [Operator]', -- Operator
+    ' [TypeParameter]', -- TypeParameter
+}
+
